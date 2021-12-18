@@ -42,9 +42,9 @@ class PostController extends Controller
         $post->excerpt = Str::words($body, 10);
         $post->created_at = Carbon::now();
 
-        // $post->save();
+        $post->save();
 
-        dd($post);
+        // dd($post);
 
         return response()->json([
             'message' => 'Post berhasil dibuat',
@@ -87,7 +87,7 @@ class PostController extends Controller
         $post->excerpt = Str::words($body, 10);
         $post->updated_at = Carbon::now();
 
-        // $post->save();
+        $post->save();
 
         dd($post);
 
@@ -107,7 +107,7 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
 
-        // $post->delete();
+        $post->delete();
         return response()->json([
             'message' => 'Post berhasil dihapus'
         ], 200);

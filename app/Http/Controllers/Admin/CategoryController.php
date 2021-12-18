@@ -40,9 +40,9 @@ class CategoryController extends Controller
         $category->slug = Str::slug($name);
         $category->created_at = Carbon::now();
 
-        // $category->save();
+        $category->save();
 
-        dd($category);
+        // dd($category);
 
         return response()->json([
             'message' => 'Category berhasil dibuat',
@@ -81,9 +81,9 @@ class CategoryController extends Controller
         $category->name = $name = $request->name;
         $category->slug = Str::slug($name);
         $category->updated_at = Carbon::now();
-        // $category->save();
+        $category->save();
 
-        dd($category);
+        // dd($category);
 
         return response()->json([
             'message' => 'Category ' . $category->getOriginal()['name'] . ' berhasil diubah menjadi ' . $category->name,
